@@ -44,7 +44,7 @@ TrashDash punta a offrire uno strumento intuitivo per educare al corretto smista
 
 ### Grow Recycling
 - **Pregi:** Design eccellente per la prima infanzia (language-free) con feedback visivi forti (i contenitori "ingeriscono" o "rigettano" i rifiuti).
-- **Difetti:** Nessuna reale sfida, assenza di vincoli temporali o game over, il che lo rende poco attraente per fasce d'età superiori25].
+- **Difetti:** Nessuna reale sfida, assenza di vincoli temporali o game over, il che lo rende poco attraente per fasce d'età superiori.
 
 ### Junker
 - **Pregi:** Efficienza del database per il riconoscimento immediato di dove gettare un prodotto scansionato.
@@ -71,8 +71,8 @@ https://drive.google.com/drive/folders/1M_5jjC_RomTToiA7NyK14MkHqKCE5Gag?usp=dri
 
 In fase di progettazione
 
-- Definizione idea
-- Creazione repository
+- Definizione idea ✔️
+- Creazione repository ✔️
 - Analisi requisiti (in corso)
 - Sviluppo app
 
