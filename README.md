@@ -63,7 +63,7 @@ TrashDash punta a offrire uno strumento intuitivo per educare al corretto smista
 
 La documentazione completa del progetto è disponibile al seguente link:
 
-https://drive.google.com/drive/folders/1M_5jjC_RomTToiA7NyK14MkHqKCE5Gag?usp=drive_link
+https://drive.google.com/drive/folders/1M_5jjC_RomTToiA7NyK14MkHqKCE5Gag?usp=sharing
 
 ---
 
