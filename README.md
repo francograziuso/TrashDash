@@ -73,8 +73,8 @@ In fase di progettazione
 
 - Definizione idea ✔️
 - Creazione repository ✔️
-- Analisi requisiti (in corso)
-- Sviluppo app
+- Analisi requisiti ✔️
+- Sviluppo app (in corso)
 
 ---
 
