@@ -1,82 +1,71 @@
 # TrashDash
-*Il mobile game educational arcade che trasforma l'apprendimento delle normative ambientali in un'esperienza interattiva.*
 
----
+TrashDash e' un'applicazione mobile in forma di educational game dedicata alla raccolta differenziata. Il progetto trasforma lo smistamento dei rifiuti in un'esperienza interattiva: l'utente riconosce gli oggetti, li trascina nel contenitore corretto, accumula punteggio, riceve feedback sugli errori e puo' confrontarsi con altri giocatori.
 
-## Descrizione del progetto
+Questo repository contiene un unico README di presentazione del progetto. La documentazione completa, i materiali di consegna e gli approfondimenti tecnici sono disponibili nel Drive ufficiale del gruppo.
 
-TrashDash è un mobile game di genere "educational arcade" progettato per sfruttare logiche di gamification e una UI dinamica al fine di rendere lo smistamento dei rifiuti un'attività ad alto coinvolgimento.
+## Documentazione ufficiale
 
-L'applicazione mira a risolvere il disorientamento degli utenti causato dalla frammentazione delle regole locali sullo smaltimento, superando i limiti dei tradizionali canali informativi, spesso statici e tediosi.
+[Cartella Google Drive del progetto](https://drive.google.com/drive/folders/1M_5jjC_RomTToiA7NyK14MkHqKCE5Gag?usp=drive_link)
 
-A differenza delle classiche app o dei manuali, TrashDash permette l'interiorizzazione delle procedure di riciclo attraverso un allenamento pratico e immediato.
+Nel Drive sono raccolti i documenti utili per descrivere l'applicazione, l'architettura, il design, il frontend, il backend, il database e la presentazione del lavoro.
 
----
+## Obiettivo del progetto
 
-## Obiettivo
+TrashDash nasce con l'obiettivo di rendere piu' semplice e coinvolgente l'apprendimento della raccolta differenziata. L'app usa meccaniche da gioco arcade per aiutare l'utente a memorizzare il contenitore corretto per ogni rifiuto e, quando possibile, ad applicare regole coerenti con il territorio selezionato o rilevato.
 
-L'obiettivo del progetto è sviluppare un gioco educativo che metta al centro:
+## Funzionalita' principali
 
-- **Apprendimento pratico** e interattivo
-- **Coinvolgimento** tramite logiche di gamification
-- **Adattabilità locale** alle normative specifiche di smaltimento
+- Registrazione, login e accesso ospite.
+- Profilo utente con punteggio, monete, impostazioni e oggetti cosmetici.
+- Gameplay drag-and-drop con timer, vite e difficolta' progressive.
+- Feedback immediato sugli errori e report didattico a fine partita.
+- Catalogo dei rifiuti e regole di smistamento.
+- Regole locali basate su localizzazione o selezione manuale.
+- Classifica globale degli utenti.
+- Shop cosmetico con acquisto ed equipaggiamento degli item.
+- Modalita' scontro 1v1 tramite codice lobby.
 
-TrashDash punta a offrire uno strumento intuitivo per educare al corretto smistamento domestico superando la noia dell'apprendimento passivo.
+## Architettura dell'applicazione
 
----
+La versione applicativa di TrashDash e' organizzata separando le responsabilita' principali:
 
-## Macro-funzionalità
+- **Frontend mobile**: interfaccia utente, schermate di gioco, navigazione, animazioni, suoni, shop, classifica e interazione con le API.
+- **Backend**: API REST, autenticazione, gestione utenti, partite, lobby 1v1, classifica, shop e geolocalizzazione.
+- **Database**: persistenza di utenti, sessioni, risultati, acquisti, item, regole locali e dati di gioco.
+- **Documentazione**: requisiti, casi d'uso, struttura dati, architettura, scelte progettuali e materiali di presentazione.
 
-- Core gameplay basato sull'interazione drag-and-drop per il posizionamento dei rifiuti nei corretti contenitori
-- Difficoltà scalabile basata su tempo limite e sistema di vite a disposizione
-- Feedback visivo evolutivo durante il gioco
-- Integrazione API di geolocalizzazione per aggiornare le regole in tempo reale in base alla posizione
-- Shop virtuale dove spendere la valuta in-game ottenuta completando i livelli
-- Modulo multiplayer per sfide 1v1 online
+## Tecnologie utilizzate
 
----
+- **React Native / Expo** per l'app mobile.
+- **JavaScript** per la parte frontend.
+- **Node.js** per l'ambiente backend.
+- **Express** per l'esposizione delle API.
+- **TypeScript** per rendere il backend piu' tipizzato e manutenibile.
+- **PostgreSQL** come database relazionale.
+- **Prisma** come ORM e livello di accesso al database.
+- **Docker** per avviare l'ambiente database in modo riproducibile.
+- **API REST** per la comunicazione tra app e backend.
+- **WebSocket** per le funzionalita' realtime della modalita' scontro.
+- **Onion/Clean Architecture** per separare dominio, casi d'uso, infrastruttura e presentazione.
 
-## Analisi dei Competitor
+## Aree del progetto
 
-### Recycle Game: Sorting And Eco
-- **Pregi:** Meccanica drag-and-drop centrale, altamente intuitiva e con una curva di apprendimento istantanea.
-- **Difetti:** Elevata ripetitività a lungo termine a causa dell'assenza di un meta-gameplay, sistemi di personalizzazione e dinamiche multiplayer.
+### Documentazione
 
-### Grow Recycling
-- **Pregi:** Design eccellente per la prima infanzia (language-free) con feedback visivi forti (i contenitori "ingeriscono" o "rigettano" i rifiuti).
-- **Difetti:** Nessuna reale sfida, assenza di vincoli temporali o game over, il che lo rende poco attraente per fasce d'età superiori.
+La documentazione descrive il progetto in modo completo: obiettivi, requisiti, casi d'uso, architettura, database, design, frontend e backend. Serve sia come supporto alla presentazione sia come guida tecnica per spiegare le scelte realizzative.
 
-### Junker
-- **Pregi:** Efficienza del database per il riconoscimento immediato di dove gettare un prodotto scansionato.
-- **Difetti:** Mancanza di feedback dinamico ed esperienza lineare e priva di stimoli (gli errori non hanno conseguenze).
+### Design
 
----
+Il design e' pensato per rendere il tema ambientale chiaro e immediato. L'interfaccia usa colori, icone, feedback visivi, elementi cosmetici, suoni e animazioni per rendere il gioco leggibile, riconoscibile e adatto a un'esperienza mobile.
 
-## Target utenti
+### Frontend
 
-- Bambini e adolescenti (Target primario)
-- Tutti i cittadini che necessitano di uno strumento intuitivo e geolocalizzato per il corretto smistamento domestico
+Il frontend gestisce l'esperienza utente: schermate principali, login, nuova partita, gameplay, report, classifica, shop, impostazioni e comunicazione con il backend. La parte mobile e' progettata per essere usata tramite Expo e per funzionare su dispositivi reali o emulatori.
 
----
+### Backend
 
-## Documentazione del progetto
-
-La documentazione completa del progetto è disponibile al seguente link:
-
-https://drive.google.com/drive/folders/1M_5jjC_RomTToiA7NyK14MkHqKCE5Gag?usp=sharing
-
----
-
-## Stato del progetto
-
-In fase di progettazione
-
-- Definizione idea ✔️
-- Creazione repository ✔️
-- Analisi requisiti ✔️
-- Sviluppo app (in corso)
-
----
+Il backend coordina la logica applicativa: autenticazione, utenti, salvataggio delle partite, classifica, acquisti dello shop, lobby 1v1, sincronizzazione realtime e accesso ai dati tramite Prisma. La struttura segue una separazione a livelli per mantenere il codice piu' ordinato e facile da spiegare.
 
 ## Team
 
@@ -85,9 +74,6 @@ In fase di progettazione
 - Giorgia Rispoli (Matr. 0612709246)
 - Matteo Trivellone (Matr. 0612709465)
 
----
+## Contesto
 
-## Note
-
-Il progetto è sviluppato dal Gruppo 1 nell’ambito dell’Academy di Mobile Programming, Università degli Studi di Salerno (A.A. 2025/2026).
-
+Progetto realizzato dal Gruppo 1 per l'Academy di Mobile Programming, Universita' degli Studi di Salerno, A.A. 2025/2026.
