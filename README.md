@@ -12,7 +12,7 @@ Nel Drive sono raccolti i documenti utili per descrivere l'applicazione, l'archi
 
 ## Obiettivo del progetto
 
-TrashDash nasce con l'obiettivo di rendere piu' semplice e coinvolgente l'apprendimento della raccolta differenziata. L'app usa meccaniche da gioco arcade per aiutare l'utente a memorizzare il contenitore corretto per ogni rifiuto e, quando possibile, ad applicare regole coerenti con il territorio selezionato o rilevato.
+TrashDash nasce con l'obiettivo di rendere piu' semplice e coinvolgente l'apprendimento della raccolta differenziata. L'app usa meccaniche da gioco arcade per aiutare l'utente a memorizzare il contenitore corretto per ogni rifiuto e, quando possibile, ad applicare regole coerenti con il territorio rilevato.
 
 ## Funzionalita' principali
 
