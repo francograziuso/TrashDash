@@ -21,7 +21,7 @@ TrashDash nasce con l'obiettivo di rendere piu' semplice e coinvolgente l'appren
 - Gameplay drag-and-drop con timer, vite e difficolta' progressive.
 - Feedback immediato sugli errori e report didattico a fine partita.
 - Catalogo dei rifiuti e regole di smistamento.
-- Regole locali basate su localizzazione o selezione manuale.
+- Regole locali basate su localizzazione.
 - Classifica globale degli utenti.
 - Shop cosmetico con acquisto ed equipaggiamento degli item.
 - Modalita' scontro 1v1 tramite codice lobby.
