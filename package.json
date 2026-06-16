@@ -1,0 +1,18 @@
+{
+  "name": "trashdash",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Script cross-platform per avviare TrashDash.",
+  "scripts": {
+    "start": "node scripts/start-trashdash.js",
+    "start:setup": "node scripts/start-trashdash.js --setup",
+    "start:tunnel": "node scripts/start-trashdash.js --tunnel",
+    "start:web": "node scripts/start-trashdash.js --web",
+    "start:android": "node scripts/start-trashdash.js --android",
+    "start:frontend": "node scripts/start-trashdash.js --frontend-only",
+    "start:backend": "node scripts/start-trashdash.js --backend-only"
+  },
+  "engines": {
+    "node": ">=20 <25"
+  }
+}

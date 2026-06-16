@@ -104,7 +104,7 @@ Questa organizzazione rende piu' facile spiegare il progetto: il backend contien
 
 ## Avvio rapido in locale
 
-Aprire due terminali separati: uno per backend/database e uno per frontend.
+Metodo consigliato: usare lo script cross-platform alla radice del progetto. Lo script funziona su Windows, macOS e Linux perche usa Node.js, rileva automaticamente l'IP LAN, scrive i file `.env`, avvia PostgreSQL con Docker, prepara Prisma, avvia backend e apre Expo.
 
 ### Prerequisiti
 
@@ -124,9 +124,56 @@ docker --version
 docker compose version
 ```
 
-### 1. Backend
+### Primo avvio completo
 
-Nel primo terminale:
+Dalla radice della repo:
+
+```powershell
+cd TrashDash
+npm run start:setup
+```
+
+Il comando esegue:
+
+- installazione dipendenze backend/frontend se necessario;
+- creazione degli `.env` locali;
+- avvio PostgreSQL Docker;
+- `prisma generate`, `prisma db push` e seed;
+- backend su `http://localhost:4000/api`;
+- frontend Expo in modalita' LAN.
+
+### Avvii successivi
+
+```powershell
+cd TrashDash
+npm start
+```
+
+Se il QR LAN non funziona con Expo Go, usare il tunnel:
+
+```powershell
+npm run start:tunnel
+```
+
+Se lo script sceglie l'IP sbagliato, forzare manualmente l'IP LAN del PC:
+
+```powershell
+npm start -- --ip=192.168.1.25
+```
+
+Comandi utili dello script:
+
+```powershell
+npm run start:web          # avvio frontend web
+npm run start:android      # Android Emulator, API su 10.0.2.2
+npm run start:frontend     # solo frontend
+npm run start:backend      # solo backend/database
+node scripts/start-trashdash.js --help
+```
+
+### Avvio manuale backend
+
+Se si preferisce avviare tutto a mano, aprire due terminali separati. Nel primo terminale:
 
 ```powershell
 cd Trash_Dash_backend
@@ -181,7 +228,7 @@ email: admin@admin.admin
 password: admin123
 ```
 
-### 2. Frontend
+### Avvio manuale frontend
 
 Nel secondo terminale:
 
@@ -189,10 +236,10 @@ Nel secondo terminale:
 cd Trash_Dash_frontend
 npm ci
 npx expo install --check
-.\start-light-windows.ps1
+npx expo start --lan --clear
 ```
 
-Su Windows, `start-light-windows.ps1` rileva l'IP LAN del PC, scrive il file `.env` corretto e avvia Expo in modalita' LAN. Dal pannello Expo e' possibile aprire l'app su web, emulatore o dispositivo fisico.
+Dal pannello Expo e' possibile aprire l'app su web, emulatore o dispositivo fisico.
 
 Per sviluppo locale con variabile esplicita:
 
@@ -236,25 +283,6 @@ npx expo start --tunnel --clear
 ```
 
 Il tunnel serve solo a collegare Expo Go a Metro. Per le funzioni online, il telefono deve comunque riuscire a raggiungere il backend all'URL indicato in `.env`.
-
-## Avvii successivi
-
-Backend:
-
-```powershell
-cd Trash_Dash_backend
-docker compose up -d
-npm run dev
-```
-
-Frontend:
-
-```powershell
-cd Trash_Dash_frontend
-.\start-light-windows.ps1
-```
-
-Se si usa un telefono fisico, controllare che il file `.env` del frontend contenga l'IP LAN aggiornato del computer.
 
 ## Comandi utili
 
