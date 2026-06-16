@@ -39,7 +39,6 @@ TrashDash/
 |-- Trash_Dash_backend/     # API REST + WebSocket, Prisma, PostgreSQL, Docker per il database
 |-- Trash_Dash_frontend/    # app mobile Expo / React Native
 |-- TrashDash_Manuale/      # demo web di supporto per test localizzazione/catalogo
-|-- docs/                   # requisiti, schema ER, glossario e architettura
 `-- README.md               # presentazione generale del progetto
 ```
 
