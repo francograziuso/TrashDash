@@ -187,13 +187,12 @@ Nel secondo terminale:
 
 ```powershell
 cd Trash_Dash_frontend
-Copy-Item .env.example .env
 npm ci
 npx expo install --check
-npx expo start --lan --clear
+.\start-light-windows.ps1
 ```
 
-Dal pannello Expo e' possibile aprire l'app su web, emulatore o dispositivo fisico.
+Su Windows, `start-light-windows.ps1` rileva l'IP LAN del PC, scrive il file `.env` corretto e avvia Expo in modalita' LAN. Dal pannello Expo e' possibile aprire l'app su web, emulatore o dispositivo fisico.
 
 Per sviluppo locale con variabile esplicita:
 
@@ -228,13 +227,15 @@ npx expo start --lan --clear
 
 Computer e telefono devono stare sulla stessa rete Wi-Fi. Il backend deve essere raggiungibile dal telefono sulla porta `4000`.
 
-Su Windows e' disponibile anche lo script:
+Se si preferisce configurare manualmente il file `.env`, partire da `.env.example` ma sostituire sempre `TUO_IP_LOCALE` con l'IP vero del PC. Non lasciare placeholder come `IP_LAN_PC` o `TUO_IP_LOCALE`.
+
+Se il QR LAN non si apre da Expo Go, provare il tunnel:
 
 ```powershell
-.\start-light-windows.ps1
+npx expo start --tunnel --clear
 ```
 
-Lo script rileva l'IP LAN del PC, scrive il file `.env` del frontend e avvia Expo in modalita' LAN.
+Il tunnel serve solo a collegare Expo Go a Metro. Per le funzioni online, il telefono deve comunque riuscire a raggiungere il backend all'URL indicato in `.env`.
 
 ## Avvii successivi
 
@@ -250,7 +251,7 @@ Frontend:
 
 ```powershell
 cd Trash_Dash_frontend
-npx expo start --lan --clear
+.\start-light-windows.ps1
 ```
 
 Se si usa un telefono fisico, controllare che il file `.env` del frontend contenga l'IP LAN aggiornato del computer.

@@ -13,6 +13,7 @@ function getExpoHost() {
 function normalizeApiBaseUrl(value) {
   const normalized = String(value || "").trim().replace(/\/+$/, "");
   if (!normalized) return "";
+  if (/IP_LAN_PC|TUO_IP_LOCALE/i.test(normalized)) return "";
   return normalized.endsWith("/api") ? normalized : `${normalized}/api`;
 }
 
