@@ -1,8 +1,8 @@
+# TrashDash
 <p align="center">
   <img src="assets/trashdash_icon.png" alt="Icona TrashDash" width="160" />
 </p>
 
-# TrashDash
 
 TrashDash e' un'applicazione mobile in forma di educational game dedicata alla raccolta differenziata. Il progetto trasforma lo smistamento dei rifiuti in un'esperienza interattiva: l'utente riconosce gli oggetti, li trascina nel contenitore corretto, accumula punteggio, riceve feedback sugli errori e puo' confrontarsi con altri giocatori.
 
