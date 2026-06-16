@@ -1,6 +1,6 @@
 # TrashDash
 <p align="center">
-  <img src="assets/trashdash_icon.png" alt="Icona TrashDash" width="160" />
+  <img src="Trash_Dash_frontend/assets/images/trashdash_icon.png" alt="Icona TrashDash" width="160" />
 </p>
 
 
@@ -39,6 +39,7 @@ TrashDash/
 |-- Trash_Dash_backend/     # API REST + WebSocket, Prisma, PostgreSQL, Docker per il database
 |-- Trash_Dash_frontend/    # app mobile Expo / React Native
 |-- TrashDash_Manuale/      # demo web di supporto per test localizzazione/catalogo
+|-- .gitignore              # esclusioni per env, dipendenze, build e cache
 `-- README.md               # presentazione generale del progetto
 ```
 
@@ -288,6 +289,19 @@ Controlli frontend:
 cd Trash_Dash_frontend
 npx expo install --check
 ```
+
+## Demo manuale
+
+La cartella `TrashDash_Manuale/` contiene una demo web leggera per controllare rapidamente geolocalizzazione, catalogo rifiuti e regole locali senza aprire l'app mobile.
+
+Avvio su Windows:
+
+```powershell
+cd TrashDash_Manuale
+.\start-demo-windows.ps1
+```
+
+In alternativa si puo' aprire direttamente `index.html` nel browser. La demo non modifica dati: legge soltanto endpoint pubblici del backend, quindi il backend deve essere gia' avviato su `http://localhost:4000/api` oppure sull'IP LAN del PC.
 
 ## Porte locali
 
