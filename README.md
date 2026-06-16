@@ -83,6 +83,8 @@ Trash_Dash_frontend/
 |   `-- presentation/       # componenti, hook, traduzioni e stili
 |-- App.js                  # composizione principale dell'app Expo
 |-- app.json                # configurazione Expo
+|-- start-trashdash.js      # launcher cross-platform per avvio guidato
+|-- start-light-windows.ps1 # wrapper Windows del launcher frontend
 `-- package.json            # script frontend e dipendenze Expo
 ```
 
@@ -104,7 +106,7 @@ Questa organizzazione rende piu' facile spiegare il progetto: il backend contien
 
 ## Avvio rapido in locale
 
-Metodo consigliato: usare lo script cross-platform alla radice del progetto. Lo script funziona su Windows, macOS e Linux perche usa Node.js, rileva automaticamente l'IP LAN, scrive i file `.env`, avvia PostgreSQL con Docker, prepara Prisma, avvia backend e apre Expo.
+Metodo consigliato: usare il launcher cross-platform incluso nella cartella frontend. Il launcher funziona su Windows, macOS e Linux perche usa Node.js, rileva automaticamente l'IP LAN, scrive i file `.env`, avvia PostgreSQL con Docker, prepara Prisma, avvia backend e apre Expo.
 
 ### Prerequisiti
 
@@ -130,7 +132,7 @@ Dalla radice della repo:
 
 ```powershell
 cd TrashDash
-npm run start:setup
+node Trash_Dash_frontend/start-trashdash.js --setup
 ```
 
 Il comando esegue:
@@ -146,29 +148,29 @@ Il comando esegue:
 
 ```powershell
 cd TrashDash
-npm start
+node Trash_Dash_frontend/start-trashdash.js
 ```
 
 Se il QR LAN non funziona con Expo Go, usare il tunnel:
 
 ```powershell
-npm run start:tunnel
+node Trash_Dash_frontend/start-trashdash.js --tunnel
 ```
 
 Se lo script sceglie l'IP sbagliato, forzare manualmente l'IP LAN del PC:
 
 ```powershell
-npm start -- --ip=192.168.1.25
+node Trash_Dash_frontend/start-trashdash.js --ip=192.168.1.25
 ```
 
 Comandi utili dello script:
 
 ```powershell
-npm run start:web          # avvio frontend web
-npm run start:android      # Android Emulator, API su 10.0.2.2
-npm run start:frontend     # solo frontend
-npm run start:backend      # solo backend/database
-node scripts/start-trashdash.js --help
+node Trash_Dash_frontend/start-trashdash.js --web            # avvio frontend web
+node Trash_Dash_frontend/start-trashdash.js --android        # Android Emulator, API su 10.0.2.2
+node Trash_Dash_frontend/start-trashdash.js --frontend-only  # solo frontend
+node Trash_Dash_frontend/start-trashdash.js --backend-only   # solo backend/database
+node Trash_Dash_frontend/start-trashdash.js --help
 ```
 
 ### Avvio manuale backend

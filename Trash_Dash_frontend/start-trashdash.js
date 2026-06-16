@@ -2,7 +2,6 @@
 
 const crypto = require("node:crypto");
 const fs = require("node:fs");
-const net = require("node:net");
 const os = require("node:os");
 const path = require("node:path");
 const { spawn, spawnSync } = require("node:child_process");
@@ -51,12 +50,18 @@ function printHelp() {
 TrashDash cross-platform launcher
 
 Uso:
-  npm run start:setup          Installa dipendenze, prepara DB e avvia backend + frontend
-  npm start                    Avvia backend + frontend usando dipendenze gia installate
-  npm run start:tunnel         Avvia Expo in tunnel se il QR LAN non funziona
-  npm start -- --ip=192.168.x.x Forza l'IP LAN da usare sul telefono
-  npm run start:web            Avvia Expo web
-  npm run start:android        Avvia Android Emulator con API su 10.0.2.2
+  node Trash_Dash_frontend/start-trashdash.js --setup
+                              Installa dipendenze, prepara DB e avvia backend + frontend
+  node Trash_Dash_frontend/start-trashdash.js
+                              Avvia backend + frontend usando dipendenze gia installate
+  node Trash_Dash_frontend/start-trashdash.js --tunnel
+                              Avvia Expo in tunnel se il QR LAN non funziona
+  node Trash_Dash_frontend/start-trashdash.js --ip=192.168.x.x
+                              Forza l'IP LAN da usare sul telefono
+  node Trash_Dash_frontend/start-trashdash.js --web
+                              Avvia Expo web
+  node Trash_Dash_frontend/start-trashdash.js --android
+                              Avvia Android Emulator con API su 10.0.2.2
 
 Opzioni:
   --setup          Esegue npm ci, Docker, Prisma e seed prima dell'avvio
@@ -210,7 +215,7 @@ function chooseNetworkTarget() {
   }
 
   warn("Nessun IP LAN rilevato. Uso localhost come fallback.");
-  warn("Su telefono fisico localhost non basta: usa npm start -- --ip=TUO_IP oppure npm run start:tunnel.");
+  warn("Su telefono fisico localhost non basta: usa node Trash_Dash_frontend/start-trashdash.js --ip=TUO_IP oppure --tunnel.");
   return {
     apiHost: "localhost",
     expoMode: options.tunnel ? "tunnel" : "lan",
